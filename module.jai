@@ -122,7 +122,7 @@ arena_allocator_proc :: (mode: Allocator_Mode, requested_size: s64, old_size: s6
         // "is this a debug allocator?", "does it support free?", "is it thread-safe?"
         // The version string identifies the module for diagnostics.
         if old_memory { (.*)cast(*string)old_memory = CAPS_VERSION_STRING; }
-        return cast(*void)(Allocator_Caps.HINT_I_AM_A_GENERAL_HEAP_ALLOCATOR|.FREE);
+        return cast(*void)(Allocator_Caps.HINT_I_AM_A_FAST_BUMP_ALLOCATOR|.IS_THIS_YOURS);
     }
 }
 
